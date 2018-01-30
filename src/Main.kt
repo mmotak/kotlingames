@@ -1,5 +1,12 @@
-import pl.mmotak.kik.Board
+import pl.mmotak.kik.Game
 
 fun main(args: Array<String>) {
-    Board().draw()
+    val game = Game()
+    while(game.isNotEnded()) {
+        game.moveToNextPlayer()
+        game.drawBoard()
+        game.currentPlayerMakeMove()
+    }
+
+    game.drawEndMessage()
 }
